@@ -1,0 +1,39 @@
+apiVersion: events.ibm.com/v1beta1
+kind: EventEndpointManagement
+metadata:
+  name: eventendpointmgr
+spec:
+  license:
+    accept: true
+    license: L-QYVA-B365MB
+    metric: VIRTUAL_PROCESSOR_CORE
+    use: CloudPakForIntegrationNonProduction
+  manager:
+    tls: 
+      ui:
+        secretName: default-cert-copy
+      trustedCertificates:
+        - secretName: letsencrypt-chain
+          certificate: ca.crt
+    authConfig:
+      authType: INTEGRATION_KEYCLOAK
+    storage:
+      storageClassName: PATCHED_BY_KUSTOMIZE
+      type: persistent-claim
+    template:
+      pod:
+        spec:
+          containers:
+            - name: manager
+              #env:
+              #  - name: FULL_LOG_TRACE
+              #    value: 'true'
+              #  - name: EI_AUTH_OAUTH2_ADDITIONAL_SCOPES
+              #    value: 'email,profile,offline_access'
+              resources:
+                limits:
+                  cpu: '0.5'
+                  memory: 512Mi
+                requests:
+                  cpu: '0.25'
+                  memory: 256Mi

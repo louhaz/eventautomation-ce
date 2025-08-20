@@ -1,0 +1,12 @@
+apiVersion: integration.ibm.com/v1beta1
+kind: PlatformNavigator
+metadata:
+  name: platform-navigator
+  labels:
+    backup.integration.ibm.com/component: platformnavigator        
+spec:
+  license:
+    accept: true
+    license: L-QYVA-B365MB
+  replicas: 1
+  version: 16.1.1

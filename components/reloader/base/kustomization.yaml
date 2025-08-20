@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+
+  - https://github.com/stakater/Reloader/deployments/kubernetes?submodules=false
+  # - https://github.com/stakater/Reloader/deployments/kubernetes?ref=v1.0.38&submodules=false #https://github.com/stakater/Reloader/issues/482
+
+namespace: cp4i
+
+patches:
+- target:
+    version: v1
+    kind: Deployment
+    name: reloader-reloader
+  path: remove-user.yaml
+- target:
+    version: v1
+    kind: Deployment
+    name: reloader-reloader
+  path: add-reload-strategy.yaml

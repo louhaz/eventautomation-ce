@@ -1,0 +1,38 @@
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cp4i-argo-role
+rules:
+  - verbs:
+      - '*'
+    apiGroups:
+      - apiconnect.ibm.com
+      - eventstreams.ibm.com
+      - integration.ibm.com
+      - mq.ibm.com
+      - appconnect.ibm.com
+      - cert-manager.io
+      - tekton.dev
+      - build.openshift.io
+      - image.openshift.io
+      - route.openshift.io
+      - triggers.tekton.dev
+      - monitoringcontroller.cloud.ibm.com
+      - autoscaling
+      - logging.openshift.io
+      - networking.k8s.io
+      - monitoring.coreos.com
+      - operator.ibm.com
+      - instana.io
+      - jaegertracing.io
+      - flink.apache.org
+      - events.ibm.com
+      - apps
+      - batch
+      - operator.autoscaling.openshift.io
+      - objectbucket.io
+      - tempo.grafana.com
+      - opentelemetry.io
+      - ""
+    resources:
+      - '*'

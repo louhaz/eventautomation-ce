@@ -1,0 +1,11 @@
+kind: MessagingServer
+apiVersion: integration.ibm.com/v1beta1
+metadata:
+  name: sample-messagingserver
+spec:
+  queueManager:
+    name: MSGSERVERQM
+    storage:
+      defaultClass: PATCHED_BY_KUSTOMZIE
+    availability:
+      type: NativeHA
