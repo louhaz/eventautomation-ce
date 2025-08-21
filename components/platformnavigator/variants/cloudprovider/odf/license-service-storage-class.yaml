@@ -4,4 +4,4 @@ metadata:
   name: instance
   namespace: ibm-common-services
 spec:
-  storageClass: ocs-storagecluster-ceph-rbd
+  storageClass: ocs-external-storagecluster-ceph-rbd
