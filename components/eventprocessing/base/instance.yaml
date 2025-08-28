@@ -5,7 +5,7 @@ metadata:
 spec:
   license:
     accept: true
-    license: L-CYBH-K48BZQ
+    license: L-AUKS-FKVXVL
     use: EventAutomationNonProduction
   flink:
     endpoint: ibm-flink-rest.cp4i.svc:8081
