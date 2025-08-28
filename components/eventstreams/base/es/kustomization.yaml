@@ -4,3 +4,5 @@ kind: Kustomization
 resources:
   - eventstreams.yaml
   - scram-user.yaml
+  - route-topic.yaml
+  - truck-location-topic.yaml
