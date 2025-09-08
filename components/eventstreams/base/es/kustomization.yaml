@@ -6,3 +6,4 @@ resources:
   - scram-user.yaml
   - route-topic.yaml
   - truck-location-topic.yaml
+  - undelivered-consignments.yaml
