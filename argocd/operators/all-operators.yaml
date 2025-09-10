@@ -10,6 +10,8 @@ spec:
           namespace: cert-manager-operator
         - name: platformnavigator
           namespace: cp4i
+        - name: postgres
+          namespace: openshift-operators
         # - name: apiconnect
         #   namespace: cp4i
         # - name: appconnect
