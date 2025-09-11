@@ -12,6 +12,11 @@ spec:
         resources:
           requests:
             storage: 1Gi
+  dataSource:
+    initdb: 
+      postInitSQL:
+        - name: postgres-tables-configmap
+          key: tables.sql
   backups:
     pgbackrest:
       repos:
