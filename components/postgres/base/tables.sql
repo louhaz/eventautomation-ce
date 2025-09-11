@@ -1,5 +1,6 @@
-CREATE SCHEMA IF NOT EXISTS eta_schema;
+\c postgres-db
 
+CREATE SCHEMA IF NOT EXISTS eta_schema;
 
 CREATE TABLE IF NOT EXISTS eta_schema.eta (
     route_id TEXT NOT NULL,
