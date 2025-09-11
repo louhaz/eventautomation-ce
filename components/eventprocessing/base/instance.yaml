@@ -15,4 +15,16 @@ spec:
       storageClassName: PATCHED_BY_KUSTOMIZE
     authConfig:
       authType: LOCAL
+  template:
+    pod:
+      spec:
+        containers:
+          - name: backend
+             env:
+              - name: TZ
+                value: "Europe/Stockholm"
+          - name: ui
+             env:
+              - name: TZ
+                value: "Europe/Stockholm"
 
