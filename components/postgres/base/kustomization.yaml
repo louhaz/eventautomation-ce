@@ -1,6 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+# Generate these config maps from files to support
+# syntax hignlighting in tooling.
+configMapGenerator:
+  - name: postgres-tables-configmap
+    files:
+      - tables.sql
+
+generatorOptions:
+  disableNameSuffixHash: true
+
 resources:
 
   - postgres.yaml
