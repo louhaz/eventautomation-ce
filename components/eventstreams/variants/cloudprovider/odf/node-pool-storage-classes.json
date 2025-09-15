@@ -1,0 +1,18 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/strimziOverrides/nodePools/0/storage",
+    "value": {
+      "name": "class",
+      "value": "ocs-external-storagecluster-ceph-rbd"
+    }
+  },
+  {
+    "op": "replace",
+    "path": "/spec/strimziOverrides/nodePools/1/storage",
+    "value": {
+      "name": "class",
+      "value": "ocs-external-storagecluster-ceph-rbd"
+    }
+  }
+]

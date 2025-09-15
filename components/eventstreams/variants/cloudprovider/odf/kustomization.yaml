@@ -3,3 +3,11 @@ kind: Component
 
 patchesStrategicMerge:
 - storage-class.yaml
+
+patchesJson6902:
+  - target:
+      group: eventstreams.ibm.com
+      version: v1beta2
+      kind: EventStreams
+      name: minimal-prod
+    path: node-pool-storage-classes.json
