@@ -4,6 +4,9 @@ metadata:
   name: minimal-prod
 spec:
   strimziOverrides:
+    zookeeper:
+      storage:
+        class: ocs-external-storagecluster-ceph-rbd
     kafka:
       storage:
         class: ocs-external-storagecluster-ceph-rbd

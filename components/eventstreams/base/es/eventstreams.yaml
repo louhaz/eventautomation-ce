@@ -26,6 +26,19 @@ spec:
   strimziOverrides:
     entityOperator:
       topicOperator: {}
+    zookeeper:
+      replicas: 3
+      metricsConfig:
+        type: jmxPrometheusExporter
+        valueFrom:
+          configMapKeyRef:
+            key: zookeeper-metrics-config.yaml
+            name: minimal-prod-metrics-config
+      storage:
+        type: persistent-claim
+        size: 2Gi
+        class: PATCHED_BY_KUSTOMIZE
+        deleteClaim: true # ensure claim is owned by CR
     kafka:
       replicas: 3
       authorization:
@@ -89,11 +102,11 @@ spec:
           limits:
             memory: 2048Mi
             cpu: 1000m
-      - name: controller
-        replicas: 3
-        storage:
-          type: persistent-claim
-          size: 2Gi
-          class: PATCHED_BY_KUSTOMIZE
-        roles:
-          - controller
+      # - name: controller
+      #   replicas: 3
+      #   storage:
+      #     type: persistent-claim
+      #     size: 2Gi
+      #     class: PATCHED_BY_KUSTOMIZE
+      #   roles:
+      #     - controller
