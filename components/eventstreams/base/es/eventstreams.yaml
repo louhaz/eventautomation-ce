@@ -96,4 +96,4 @@ spec:
           size: 2Gi
           class: PATCHED_BY_KUSTOMIZE
         roles:
-          - broker
+          - controller
