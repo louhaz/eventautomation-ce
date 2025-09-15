@@ -7,6 +7,10 @@ spec:
     kafka:
       storage:
         class: ocs-external-storagecluster-ceph-rbd
-    zookeeper:
-      storage:
-        class: ocs-external-storagecluster-ceph-rbd
+    nodePools:
+      - name: kafka
+        storage:
+          class: ocs-external-storagecluster-ceph-rbd
+      - name: zookeeper
+        storage:
+          class: ocs-external-storagecluster-ceph-rbd

@@ -73,16 +73,27 @@ spec:
         size: 4Gi
         class: PATCHED_BY_KUSTOMIZE
         deleteClaim: true # ensure claim is owned by CR
-    zookeeper:
-      replicas: 3
-      metricsConfig:
-        type: jmxPrometheusExporter
-        valueFrom:
-          configMapKeyRef:
-            key: zookeeper-metrics-config.yaml
-            name: minimal-prod-metrics-config
-      storage:
-        type: persistent-claim
-        size: 2Gi
-        class: PATCHED_BY_KUSTOMIZE
-        deleteClaim: true # ensure claim is owned by CR
+    nodePools:
+      - name: kafka
+        replicas: 3
+        storage:
+          type: persistent-claim
+          size: 2Gi
+          class: PATCHED_BY_KUSTOMIZE
+        roles:
+          - broker
+        resources:
+          requests:
+            memory: 128Mi
+            cpu: 100m
+          limits:
+            memory: 2048Mi
+            cpu: 1000m
+      - name: controller
+        replicas: 3
+        storage:
+          type: persistent-claim
+          size: 2Gi
+          class: PATCHED_BY_KUSTOMIZE
+        roles:
+          - controller
