@@ -7,3 +7,5 @@ resources:
   - route-topic.yaml
   - truck-location-topic.yaml
   - undelivered-consignments.yaml
+  - tracksys-push-topic.yaml
+  - tracksys-topic.yaml
