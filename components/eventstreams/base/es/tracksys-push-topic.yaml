@@ -1,0 +1,13 @@
+apiVersion: eventstreams.ibm.com/v1beta2
+kind: KafkaTopic
+metadata:
+  name: tracksys-push-topic
+  labels:
+    eventstreams.ibm.com/cluster: minimal-prod
+spec:
+  config:
+    min.insync.replicas: '1'
+    retention.bytes: '524288000'
+  partitions: 3
+  replicas: 3
+  topicName: TRACKSYS-PUSH
