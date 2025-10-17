@@ -1,0 +1,21 @@
+{
+    "channel": [
+        {
+            "name": "QM1.SVRCONN",
+            "clientConnection": {
+                "connection": [
+                    {
+                        "host": "native-ha-qm-ibm-mq.cp4i.svc.cluster.local",
+                        "port": 1414
+                    }
+                ],
+                "queueManager": "qm1"
+            },
+            "transmissionSecurity": {
+                "cipherSpecification": "ANY_TLS13_OR_HIGHER",
+                "certificateLabel": "CN=agent"
+            },
+            "type": "clientConnection"
+        }
+    ]
+}
