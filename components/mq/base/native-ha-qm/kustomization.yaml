@@ -8,7 +8,10 @@ configMapGenerator:
     files:
       - qm-config/tls.mqsc
       - qm-config/mq.ini
-
+  - name: my-ccdt
+    files:
+      - ccdt.json
+      
 generatorOptions:
   disableNameSuffixHash: true
 
