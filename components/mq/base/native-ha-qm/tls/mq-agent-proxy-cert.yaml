@@ -11,7 +11,7 @@ spec:
   secretName: mq-agent-proxy-cert-secret
   duration: 2160h0m0s # 90d
   renewBefore: 360h0m0s # 15d
-  commonName: "extcert"
+  commonName: "*.apps.itz-5ny2cd.infra01-lb.fra02.techzone.ibm.com"
   subject:
     organizations:
       - 'mqss'
@@ -24,9 +24,9 @@ spec:
     - digital signature
     - server auth
     - client auth
-  dnsNames:
-    - '*.cp4i.svc'
-    - '*.cp4i.svc.local'
-    - '*.cp4i.svc.local.cluster'
+  #dnsNames:
+  #  - '*.cp4i.svc'
+  #  - '*.cp4i.svc.local'
+  #  - '*.cp4i.svc.local.cluster'
   issuerRef:
     name: mq-selfsigned-issuer
