@@ -11,6 +11,10 @@
                 ],
                 "queueManager": "NATIVEHAQM"
             },
+            "transmissionSecurity": {
+                    "cipherSpecification": "ANY_TLS13_OR_HIGHER",
+                    "certificateLabel": "CN=agent"
+            },
             "type": "clientConnection"
         }
     ]
