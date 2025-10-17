@@ -88,6 +88,12 @@ spec:
           items:
             - tls.crt
             - ca.crt
+      - name: agent-trust
+        secret:
+          secretName: mq-agent-proxy-cert-secret
+          items:
+            - tls.crt
+            - ca.crt
   web:
     enabled: true
     manualConfig:
